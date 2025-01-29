@@ -1,0 +1,201 @@
+body {
+    background: radial-gradient(circle, rgba(11, 64, 177, 1) 0%, rgba(7, 30, 78, 1) 100%);
+}
+
+
+
+.ludoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    height: 100vh;
+    
+}
+
+
+#ludoBoard {
+
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: grid;
+    grid-template-areas:
+    'red-Board red-Board green-Path green-Board green-Board'
+    'red-Board red-Board green-Path green-Board green-Board'
+    'red-Path red-Path win-Zone yellow-Path yellow-Path'
+    'blue-Board blue-Board blue-Path yellow-Board yellow-Board'
+    'blue-Board blue-Board blue-Path yellow-Board yellow-Board';
+}
+
+#red-Board{
+    grid-area: red-Board;
+    background-color: red;
+}
+
+#yellow-Board{
+    grid-area: yellow-Board;
+    background-color: yellow;
+}
+
+#blue-Board{
+    grid-area: blue-Board;
+    background-color: blue;
+}
+
+#green-Board{
+    grid-area: green-Board;
+    background-color: green;
+}
+
+#green-Path{
+    grid-area: green-Path;
+    display: grid;
+}
+
+#blue-Path{
+    grid-area: blue-Path;
+   
+}
+
+#yellow-Path{
+    grid-area: yellow-Path;
+    
+}
+
+#red-Path{
+    grid-area: red-Path;
+   
+}
+
+#win-Zone{
+    grid-area: win_Zone;
+}
+
+.verticalPath{ 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.horizontalPath{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.board{
+    padding: 12px;
+    background: #1212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board div {
+    width: 80%;
+    height: 80%;
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+}
+
+.board div span{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    position: relative;
+    left: 15px;
+    
+}
+
+#green-Board div span{
+    background: green;
+}
+
+#yellow-Board div span{
+    background: yellow;
+}
+
+#blue-Board div span{
+    background: blue;
+}
+
+#red-Board div span{
+    background: red;
+}
+
+.ludoBox{
+    border: 1px solid #11111142;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ludoBox .fa-location-pin{
+    position: absolute  ;
+    margin: 2px;
+    font-size: 2rem;
+    transform: translate(0, -40%);
+    -webkit-text-stroke-width: 2px;
+    z-index: 100;
+    animation: animateMyI .08s linear;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+}
+
+
+.ludoBox .fa-star{
+    position: absolute;
+    color: #222;
+    opacity: .6;
+
+}
+
+@keyframes animateMyI {
+   0%{
+    transform: scale(1.1) translate(0, -40%);
+   }
+
+   100%{
+    transform: scale(1) translate(0, -40%);
+   }
+}
+.ludoBox .fa-location-pin:nth-child(2){
+    transform: translate(10px, -40%);
+}
+
+.ludoBox .fa-location-pin:nth-child(3){
+    transform: translate(10px, -40%);
+}
+
+.ludoBox .fa-location-pin:nth-child(4){
+    transform: translate(0px, -40%) scale(0.8);
+}
+
+.redLudoBox{
+    background: var(red);
+}
+
+.greenLudoBox{
+    background: var(green);
+}
+
+.yellowLudoBox{
+    background: var(yellow);
+}
+
+.blueLudoBox{
+    background: var(blue);
+}
+
+.board .piece{
+    position: absolute;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+}
